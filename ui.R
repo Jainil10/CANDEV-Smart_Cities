@@ -16,7 +16,8 @@ shinyUI(
                  menuSubItem("Smart Grid", tabName = "power")
         ),
         menuItem("Carbon Footprint", tabName = "pollution"),
-        menuItem("Health", tabName = "health")
+        menuItem("Health", tabName = "health"),
+        menuItem("Economy", tabName = "economy")
       )
     ),
     dashboardBody(
