@@ -6,32 +6,19 @@ ui <- dashboardPage(
   dashboardHeader(title = "Basic dashboard"),
   dashboardSidebar(
     sidebarMenu(
-      menuItem("Transportation", tabName = "transportation", icon = icon("dashboard"),
-               menuSubItem("Traffic Management",icon = icon("folder-open"), tabName = "subMenu1")
+      menuItem("Transportation", tabName = "transportation",
+               menuSubItem("Traffic Management", tabName = "traffic")
+      ),
+      menuItem("Resource Management", tabName = "resource",
+               menuSubItem("Water Management", tabName = "water"),
+               menuSubItem("Waste Management", tabName = "waste"),
+               menuSubItem("Smart Grid", tabName = "power")
       )
     )
   ),
-  dashboardBody(
-    # Boxes need to be put in a row (or column)
-    fluidRow(
-      box(plotOutput("plot1", height = 250)),
-      
-      box(
-        title = "Controls",
-        sliderInput("slider", "Number of observations:", 1, 100, 50)
-      )
-    )
-  )
+  dashboardBody()
 )
 
-server <- function(input, output) { 
-  set.seed(122)
-  histdata <- rnorm(500)
-  
-  output$plot1 <- renderPlot({
-    data <- histdata[seq_len(input$slider)]
-    hist(data)
-  })
-}
+server <- function(input, output) {}
 
 shinyApp(ui, server)
