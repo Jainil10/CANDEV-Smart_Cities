@@ -15,14 +15,16 @@ shinyUI(
                  menuSubItem("Waste Management", tabName = "waste"),
                  menuSubItem("Smart Grid", tabName = "power")
         ),
-        menuItem("Carbon Footprint", tabName = "pollution")
+        menuItem("Carbon Footprint", tabName = "pollution"),
+        menuItem("Health", tabName = "health")
       )
     ),
     dashboardBody(
       tabItems(
         tabItem(tabName = "water",
                 fluidRow(
-                  box(plotOutput("water_quality"))
+                  box(plotOutput("water_quality")),
+                  box(checkboxInput("OTTAWA", "Ottawa", TRUE))
                 )
         )
       )
