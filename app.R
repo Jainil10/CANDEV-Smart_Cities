@@ -19,4 +19,7 @@ ui <- dashboardPage(
   dashboardBody()
 )
 
+#Server Function
+server(function(input, output) {}
+
 shinyApp(ui, server)

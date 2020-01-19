@@ -1,8 +1,10 @@
 ## ui.R ##
 library(shinydashboard)
 
-dashboardPage(
-  dashboardHeader(),
-  dashboardSidebar(),
-  dashboardBody()
+UI(
+  dashboardPage(
+    dashboardHeader(),
+    dashboardSidebar(),
+    dashboardBody()
+  )
 )
