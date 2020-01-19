@@ -18,8 +18,12 @@ shinyUI(
       )
     ),
     dashboardBody(
-      tabItem(tabName = "water",
-              
+      tabItems(
+        tabItem(tabName = "water",
+                fluidRow(
+                  box(plotOutput("water_quality"))
+                )
+        )
       )
     )
   )
