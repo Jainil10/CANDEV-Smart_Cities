@@ -2,15 +2,16 @@
 library(shiny)
 library(shinydashboard)
 
+
 shinyUI(
   dashboardPage(
     dashboardHeader(title = "Smart Cities"),
     dashboardSidebar(
       sidebarMenu(
-        menuItem("Transportation", tabName = "transportation",
+        menuItem("Transportation", tabName = "transportation", icon = icon("road"),
                  menuSubItem("Traffic Management", tabName = "traffic")
         ),
-        menuItem("Resource Management", tabName = "resource",
+        menuItem("Resource Management", tabName = "resource", icon = icon("leaf"),
                  menuSubItem("Water Quality", tabName = "water"),
                  menuSubItem("Waste Management", tabName = "waste"),
                  menuSubItem("Smart Grid", tabName = "power")
